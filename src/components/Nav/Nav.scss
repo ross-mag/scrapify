@@ -1,3 +1,22 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+
+.navbar {
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+    }
+}
+
+.list-item {
+    margin: 1rem;
+
+    &__link {
+        text-decoration: none;
+        color: black;
+    }
+}
