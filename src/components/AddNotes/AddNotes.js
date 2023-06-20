@@ -1,6 +1,6 @@
+import "./AddNotes.scss";
 import axios from "axios";
 import { useState } from "react";
-import "./AddNotes.scss";
 
 function AddNotes({ notes, getNotes }) {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -53,36 +53,36 @@ function AddNotes({ notes, getNotes }) {
       <form className="add-notes__form" onSubmit={handleSubmit}>
         <label for="note1" className="add-note__label">
           Note #1
-          <textarea
+          <input
             type="textarea"
-            name="note"
+            name="content1"
             id="note1"
             value={content1}
             onChange={handleContentChange1}
           >
-          </textarea>
+          </input>
         </label>
         <label for="note2" className="add-note__label">
           Note #2
-          <textarea
+          <input
             type="textarea"
-            name="note"
+            name="content2"
             id="note2"
             value={content2}
             onChange={handleContentChange2}
           >
-          </textarea>
+          </input>
         </label>
         <label for="note3" className="add-note__label">
           Note #3
-          <textarea
+          <input
             type="textarea"
-            name="note"
+            name="content3"
             id="note3"
             value={content3}
             onChange={handleContentChange3}
           >
-          </textarea>
+          </input>
         </label>
 
         <button>Add Notes</button>
@@ -91,8 +91,7 @@ function AddNotes({ notes, getNotes }) {
         {errorMessage}
       </form>
     </div >
-  )
-
+  );
 }
 
 export default AddNotes
