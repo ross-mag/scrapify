@@ -2,3 +2,20 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
+
+
+.form {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__note {
+    margin: 1rem;
+  }
+
+  &__button {
+    margin: 1rem;
+  }
+}

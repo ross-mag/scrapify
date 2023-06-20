@@ -49,43 +49,51 @@ function AddNotes({ notes, getNotes }) {
 
   return (
     <div className="add-notes">
-      <h2 className="add-note__header">Add Notes</h2>
+      <h2 className="add-notes__header">Add Notes</h2>
       <form className="add-notes__form" onSubmit={handleSubmit}>
-        <label for="note1" className="add-note__label">
-          Note #1
-          <input
-            type="textarea"
-            name="content1"
-            id="note1"
-            value={content1}
-            onChange={handleContentChange1}
-          >
-          </input>
-        </label>
-        <label for="note2" className="add-note__label">
-          Note #2
-          <input
-            type="textarea"
-            name="content2"
-            id="note2"
-            value={content2}
-            onChange={handleContentChange2}
-          >
-          </input>
-        </label>
-        <label for="note3" className="add-note__label">
-          Note #3
-          <input
-            type="textarea"
-            name="content3"
-            id="note3"
-            value={content3}
-            onChange={handleContentChange3}
-          >
-          </input>
-        </label>
+        <div className="form__container">
+          <div className="form__note">
+            <label for="note1" className="form__label">
+              Note #1
+              <input
+                type="textarea"
+                name="content1"
+                id="note1"
+                value={content1}
+                onChange={handleContentChange1}
+              >
+              </input>
+            </label>
+          </div>
+          <div className="form__note">
+            <label for="note2" className="form__label">
+              Note #2
+              <input
+                type="textarea"
+                name="content2"
+                id="note2"
+                value={content2}
+                onChange={handleContentChange2}
+              >
+              </input>
+            </label>
+          </div>
+          <div className="form__note">
+            <label for="note3" className="form__label">
+              Note #3
+              <input
+                type="textarea"
+                name="content3"
+                id="note3"
+                value={content3}
+                onChange={handleContentChange3}
+              >
+              </input>
+            </label>
+          </div>
+        </div>
 
-        <button>Add Notes</button>
+        <button className="form__button">Add Notes</button>
 
         {isSuccess && "Added notes"}
         {errorMessage}
