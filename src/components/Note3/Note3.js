@@ -1,1 +1,0 @@
-import "./Note3.scss";
