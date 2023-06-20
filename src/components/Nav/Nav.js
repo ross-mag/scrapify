@@ -7,6 +7,11 @@ function Nav() {
 			<nav className="navbar">
 				<ul className="navbar__list">
 					<li className="list-item">
+						<Link to={"/"} className="list-item__link" style={{ textDecoration: 'none' }}>
+							Home
+						</Link>
+					</li>
+					<li className="list-item">
 						<Link to={"/playlist"} className="list-item__link" style={{ textDecoration: 'none' }}>
 							Playlist
 						</Link>
