@@ -2,13 +2,13 @@
 @use './typography' as *;
 
 @mixin tablet {
-    @media (min-width: $tablet-width) {
-        @content;
-    }
+  @media (min-width: $tablet-width) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: $desktop-width) {
-        @content;
-    }
+  @media (min-width: $desktop-width) {
+    @content;
+  }
 }

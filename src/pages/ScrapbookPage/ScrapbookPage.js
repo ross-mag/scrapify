@@ -1,4 +1,6 @@
 import "./ScrapbookPage.scss";
+import { useState } from "react";
+import axios from "axios";
 
 function ScrapbookPage() {
     return (

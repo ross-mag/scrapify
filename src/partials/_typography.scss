@@ -1,84 +1,85 @@
 @mixin font-bold {
-    @font-face {
-        font-family: avenir-next;
-        font-weight: 700;
-        src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
-    }
+  @font-face {
+    font-family: avenir-next;
+    font-weight: 700;
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+  }
 
-    font-family: avenir-next,
-    sans-serif,
-    Times,
-    serif;
+  font-family: avenir-next,
+  sans-serif,
+  Times,
+  serif;
 }
 
 @mixin font-regular {
-    @font-face {
-        font-family: avenir-next;
-        font-weight: 400;
-        src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
-    }
-    font-family: avenir-next,
-    sans-serif,
-    Times,
-    serif;
+  @font-face {
+    font-family: avenir-next;
+    font-weight: 400;
+    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+  }
+
+  font-family: avenir-next,
+  sans-serif,
+  Times,
+  serif;
 }
 
 @mixin pageheader-mobile {
-    @include font-bold;
-    font-size: 1.5rem;
-    line-height: 2rem;
+  @include font-bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 @mixin sectionheader-mobile {
-    @include font-bold;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+  @include font-bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 @mixin subheader-mobile {
-    @include font-bold;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+  @include font-bold;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }
 
 @mixin bodycopy-mobile {
-    @include font-regular;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+  @include font-regular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }
 
 @mixin labels-mobile {
-    @include font-bold;
-    font-size: 0.625rem;
-    line-height: 1.25rem;
+  @include font-bold;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
 }
 
 @mixin pageheader-tablet {
-    @include font-bold;
-    font-size: 2.0625rem;
-    line-height: 2.75rem;
+  @include font-bold;
+  font-size: 2.0625rem;
+  line-height: 2.75rem;
 }
 
 @mixin sectionheader-tablet {
-    @include font-bold;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+  @include font-bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 @mixin subheader-tablet {
-    @include font-bold;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+  @include font-bold;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 @mixin bodycopy-tablet {
-    @include font-regular;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+  @include font-regular;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 @mixin labels-tablet {
-    @include font-bold;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+  @include font-bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
