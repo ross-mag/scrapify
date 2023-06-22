@@ -8,7 +8,7 @@ function ScrapbookPage() {
 
   const getNotes = () => {
     axios
-      .get("http://localhost:1020/notes"
+      .get("http://localhost:2020/notes"
       )
       .then((response) => {
         setNotes(response.data);

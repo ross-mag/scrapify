@@ -2,10 +2,9 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
-import PlaylistPage from "./pages/PlaylistPage/PlaylistPage";
-import NotesPage from "./pages/NotesPage/NotesPage";
+import MusicPage from "./pages/MusicPage/MusicPage";
+import JournalPage from "./pages/JournalPage/JournalPage";
 import ScrapbookPage from "./pages/ScrapbookPage/ScrapbookPage";
-import Callback from "./components/Callback/Callback";
 
 function App() {
   return (
@@ -14,9 +13,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/callback" component={Callback} />
-          <Route path="/playlist" element={<PlaylistPage />} />
-          <Route path="/notes" element={<NotesPage />} />
+          <Route path="/music" element={<MusicPage />} />
+          <Route path="/journal" element={<JournalPage />} />
           <Route path="/scrapbook" element={<ScrapbookPage />} />
         </Routes>
       </BrowserRouter>

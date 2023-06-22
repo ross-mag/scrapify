@@ -1,14 +1,14 @@
-import "./NotesPage.scss";
+import "./JournalPage.scss";
 import AddNotes from "../../components/AddNotes/AddNotes";
 import { useState } from "react";
 import axios from "axios";
 
-function NotesPage() {
+function JournalPage() {
   const [notes, setNotes] = useState(null);
 
   const getNotes = () => {
     axios
-      .get("http://localhost:1020/notes"
+      .get("http://localhost:2020/notes"
       )
       .then((response) => {
         setNotes(response.data);
@@ -17,10 +17,10 @@ function NotesPage() {
   };
 
   return (
-    <div className="notes-page">
+    <div className="journal-page">
       <AddNotes notes={notes} getNotes={getNotes} />
     </div>
   );
 }
 
-export default NotesPage
+export default JournalPage

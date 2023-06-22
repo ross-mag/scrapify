@@ -12,13 +12,13 @@ function Nav() {
             </Link>
           </li>
           <li className="list-item">
-            <Link to={"/playlist"} className="list-item__link" style={{ textDecoration: 'none' }}>
-              Playlist
+            <Link to={"/music"} className="list-item__link" style={{ textDecoration: 'none' }}>
+              Music
             </Link>
           </li>
           <li className="list-item">
-            <Link to={"/notes"} className="list-item__link" style={{ textDecoration: 'none' }}>
-              Notes
+            <Link to={"/journal"} className="list-item__link" style={{ textDecoration: 'none' }}>
+              Journal
             </Link>
           </li>
           <li className="list-item">
