@@ -1,3 +1,21 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.home {
+
+  &__button {
+    border: none;
+    padding: 1rem;
+    background-color: #ac9fbf;
+    border-radius: 1rem;
+  }
+}
+
+.button {
+  &__link {
+    text-decoration: none;
+    color: black;
+    margin: 1rem;
+  }
+}
