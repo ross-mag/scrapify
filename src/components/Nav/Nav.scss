@@ -3,20 +3,24 @@
 @use '../../partials/variables' as *;
 
 .navbar {
-    display: flex;
+  display: flex;
 
-    &__list {
-        display: flex;
-        list-style-type: none;
-        justify-content: center;
-    }
+  &__list {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+  }
 }
 
 .list-item {
-    margin: 1rem;
+  margin: 1rem;
 
-    &__link {
-        text-decoration: none;
-        color: black;
+  &__link {
+    text-decoration: none;
+    color: black;
+
+    &.active {
+      text-decoration: underline;
     }
+  }
 }

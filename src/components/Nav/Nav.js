@@ -1,5 +1,5 @@
 import "./Nav.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
@@ -7,24 +7,24 @@ function Nav() {
       <nav className="navbar">
         <ul className="navbar__list">
           <li className="list-item">
-            <Link to={"/"} className="list-item__link" style={{ textDecoration: 'none' }}>
+            <NavLink exact to={"/"} className="list-item__link" activeClassName="active">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="list-item">
-            <Link to={"/music"} className="list-item__link" style={{ textDecoration: 'none' }}>
+            <NavLink to={"/music"} className="list-item__link" activeClassName="active">
               Music
-            </Link>
+            </NavLink>
           </li>
           <li className="list-item">
-            <Link to={"/journal"} className="list-item__link" style={{ textDecoration: 'none' }}>
+            <NavLink to={"/journal"} className="list-item__link" activeClassName="active">
               Journal
-            </Link>
+            </NavLink>
           </li>
           <li className="list-item">
-            <Link to={"/scrapbook"} className="list-item__link" style={{ textDecoration: 'none' }}>
+            <NavLink to={"/scrapbook"} className="list-item__link" activeClassName="active">
               Scrapbook
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
