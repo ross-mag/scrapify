@@ -8,7 +8,7 @@ function NotesPage() {
 
   const getNotes = () => {
     axios
-      .get("http://localhost:8080/notes"
+      .get("http://localhost:1020/notes"
       )
       .then((response) => {
         setNotes(response.data);
