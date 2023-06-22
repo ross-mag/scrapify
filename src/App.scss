@@ -1,0 +1,62 @@
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @include font-regular;
+}
+
+h1 {
+  @include pageheader-mobile;
+  padding: 1.5rem 1rem 1rem 1rem;
+  color: $black;
+
+  @include tablet {
+    @include pageheader-tablet;
+    padding: 2.25rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+h2 {
+  @include sectionheader-mobile;
+  padding: 1.5rem 1rem 1rem 1rem;
+  color: $black;
+
+  @include tablet {
+    @include sectionheader-tablet;
+    padding: 2.25rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+h3 {
+  @include subheader-mobile;
+  padding: 1.5rem 1rem 1rem 1rem;
+  color: $black;
+
+  @include tablet {
+    @include subheader-tablet;
+    padding: 2.25rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+p {
+  @include bodycopy-mobile;
+  padding: 1rem 1rem 1rem 1rem;
+  color: $black;
+
+  @include tablet {
+    @include bodycopy-tablet;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
+}

@@ -1,0 +1,23 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-arrows {
+    display: flex;
+    justify-content: flex-end;
+
+    &__container {
+        margin: 1rem;
+    }
+
+    &__icon {
+        width: 2rem;
+
+    }
+}
