@@ -4,6 +4,21 @@ import axios from "axios";
 import Notes from "../../components/Notes/Notes";
 
 function ScrapbookPage() {
+  // const [selectedSongs, setSelectedSongs] = useState([]);
+
+
+  // const handleSongSelect = (song) => {
+  //   const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
+
+  //   if (isSelected) {
+  //     setSelectedSongs((prevSelectedSongs) =>
+  //       prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
+  //     );
+  //   } else if (selectedSongs.length < 3) {
+  //     setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
+  //   }
+  // };
+
   const [notes, setNotes] = useState(null);
 
   const getNotes = () => {

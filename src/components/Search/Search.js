@@ -2,10 +2,9 @@ import "./Search.scss";
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Search() {
+function Search({ selectedSongs, handleSongSelect }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [selectedSongs, setSelectedSongs] = useState([]);
 
   const handleSearchQueryChange = (event) => {
     setSearchQuery(event.target.value);
@@ -41,18 +40,6 @@ function Search() {
       }
     } catch (error) {
       console.error('Error:', error);
-    }
-  };
-
-  const handleSongSelect = (song) => {
-    const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
-
-    if (isSelected) {
-      setSelectedSongs((prevSelectedSongs) =>
-        prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
-      );
-    } else if (selectedSongs.length < 3) {
-      setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
   };
 
