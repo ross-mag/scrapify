@@ -5,6 +5,7 @@ import axios from 'axios';
 function Search() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedSongs, setSelectedSongs] = useState([]);
 
   const handleSearchQueryChange = (event) => {
     setSearchQuery(event.target.value);
@@ -30,7 +31,8 @@ function Search() {
 
         if (searchResponse.status === 200) {
           const data = searchResponse.data;
-          setSearchResults(data);
+          const slicedResults = data.slice(0, 10);
+          setSearchResults(slicedResults);
         } else {
           console.error('Error:', searchResponse.data.error);
         }
@@ -39,6 +41,18 @@ function Search() {
       }
     } catch (error) {
       console.error('Error:', error);
+    }
+  };
+
+  const handleSongSelect = (song) => {
+    const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
+
+    if (isSelected) {
+      setSelectedSongs((prevSelectedSongs) =>
+        prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
+      );
+    } else if (selectedSongs.length < 3) {
+      setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
   };
 
@@ -52,10 +66,30 @@ function Search() {
         />
         <button type="submit">Search</button>
       </form>
-      {/* Display search results */}
       {searchResults.map((song) => (
-        <div key={song.id}>{song.name}</div>
+        <button
+          key={song.id}
+          onClick={() => handleSongSelect(song)}
+          className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : ''}
+        >
+          <div>
+            <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+          </div>
+          <p>
+            {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
+          </p>
+        </button>
       ))}
+      <div className="selected-songs">
+        <h3>Selected Songs:</h3>
+        <ul>
+          {selectedSongs.map((song) => (
+            <li key={song.id}>
+              <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
