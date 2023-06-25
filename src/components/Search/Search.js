@@ -30,7 +30,7 @@ function Search({ selectedSongs, handleSongSelect }) {
 
         if (searchResponse.status === 200) {
           const data = searchResponse.data;
-          const slicedResults = data.slice(0, 10);
+          const slicedResults = data.slice(0, 5);
           setSearchResults(slicedResults);
         } else {
           console.error('Error:', searchResponse.data.error);
@@ -57,7 +57,7 @@ function Search({ selectedSongs, handleSongSelect }) {
         <button
           key={song.id}
           onClick={() => handleSongSelect(song)}
-          className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : ''}
+          className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : 'unselected'}
         >
           <div>
             <p>{song.name}</p> by <p>{song.artists[0].name}</p>

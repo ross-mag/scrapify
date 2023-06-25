@@ -1,10 +1,10 @@
 import "./MusicPage.scss";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Search from "../../components/Search/Search";
 
 function MusicPage() {
   const [selectedSongs, setSelectedSongs] = useState([]);
-
 
   const handleSongSelect = (song) => {
     const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
@@ -17,6 +17,7 @@ function MusicPage() {
       setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
   };
+
   return (
     <div className="music-page">
       <Search selectedSongs={selectedSongs} handleSongSelect={handleSongSelect} />
@@ -24,4 +25,4 @@ function MusicPage() {
   );
 }
 
-export default MusicPage
+export default MusicPage;

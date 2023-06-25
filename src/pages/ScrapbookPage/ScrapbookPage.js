@@ -2,22 +2,22 @@ import "./ScrapbookPage.scss";
 import { useState } from "react";
 import axios from "axios";
 import Notes from "../../components/Notes/Notes";
+import Songs from "../../components/Songs/Songs";
 
 function ScrapbookPage() {
-  // const [selectedSongs, setSelectedSongs] = useState([]);
+  const [selectedSongs, setSelectedSongs] = useState([]);
 
+  const handleSongSelect = (song) => {
+    const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
 
-  // const handleSongSelect = (song) => {
-  //   const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
-
-  //   if (isSelected) {
-  //     setSelectedSongs((prevSelectedSongs) =>
-  //       prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
-  //     );
-  //   } else if (selectedSongs.length < 3) {
-  //     setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
-  //   }
-  // };
+    if (isSelected) {
+      setSelectedSongs((prevSelectedSongs) =>
+        prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
+      );
+    } else if (selectedSongs.length < 3) {
+      setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
+    }
+  };
 
   const [notes, setNotes] = useState(null);
 
@@ -34,6 +34,7 @@ function ScrapbookPage() {
   return (
     <div className="scrapbook-page">
       <Notes notes={notes} getNotes={getNotes} />
+      <Songs selectedSongs={selectedSongs} />
     </div>
   );
 }
