@@ -43,3 +43,13 @@ To use the application, follow these steps:
 
 Spotify API:
 - https://developer.spotify.com/documentation/web-api
+
+
+## Next Steps
+- Spotify player embeds
+- Add flexibility for users to add playlists, albums, and podcasts
+- Ability to download scrapbook page as an image
+- Add photos feature
+- Add Youtube videos and Instagram posts feature
+- Add song lyrics
+- Add books
