@@ -1,11 +1,11 @@
 import "./Search.scss";
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { SelectedSongsContext } from '../../SelectedSongsContext';
 import { useNavigate } from 'react-router-dom';
 
 function Search() {
-  const { selectedSongs, setSelectedSongs, submitSongs } = useContext(SelectedSongsContext);
+  const { selectedSongs, setSelectedSongs } = useContext(SelectedSongsContext);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function Search() {
       setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
 
-    console.log("Selected Songs:", selectedSongs); // Added console.log statement
+    console.log("Selected Songs:", selectedSongs);
 
     axios.post("http://localhost:2020/selectedSongs", { song })
       .then(() => {
@@ -37,7 +37,7 @@ function Search() {
       prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
     );
 
-    console.log("Selected Songs:", selectedSongs); // Added console.log statement
+    console.log("Selected Songs:", selectedSongs);
   };
 
   const handleSearchQueryChange = (event) => {
@@ -82,11 +82,11 @@ function Search() {
       });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    submitSongs();
-    navigate('/scrapbook');
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   submitSongs();
+  //   navigate('/scrapbook');
+  // };
 
   return (
     <div>
@@ -98,7 +98,7 @@ function Search() {
         />
         <button type="submit">Search</button>
       </form>
-      {searchResults.map((song) => (
+      {searchResults && searchResults.map((song) => (
         <button
           key={song.id}
           onClick={() => handleSongSelect(song)}
@@ -123,7 +123,7 @@ function Search() {
           ))}
         </ul>
       </div>
-      <button onClick={handleSubmit} disabled={selectedSongs.length === 0}>Submit</button>
+      {/* <button onClick={handleSubmit} disabled={selectedSongs.length === 0}>Submit</button> */}
     </div>
   );
 }

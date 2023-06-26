@@ -28,10 +28,10 @@ function ScrapbookPage() {
   };
 
   return (
-      <div className="scrapbook-page">
-        <Notes notes={notes} getNotes={getNotes} />
-        <Songs selectedSongs={selectedSongs} />
-      </div>
+    <div className="scrapbook-page">
+      <Notes notes={notes} getNotes={getNotes} />
+      <Songs selectedSongs={selectedSongs} />
+    </div>
   );
 }
 

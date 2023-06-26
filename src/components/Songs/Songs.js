@@ -7,7 +7,7 @@ function Songs({ selectedSongs }) {
     <div className="selected-songs">
       <h3>Selected Songs:</h3>
       <ul>
-        {selectedSongs.map((song) => (
+        {selectedSongs && selectedSongs.map((song) => (
           <div key={song.id}>
             <p>{song.name}</p> by <p>{song.artists[0].name}</p>
           </div>
