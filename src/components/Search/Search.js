@@ -36,6 +36,15 @@ function Search() {
     );
 
     console.log("Selected Songs:", selectedSongs);
+
+    axios
+      .delete(`http://localhost:2020/selectedSongs/${song.id}`)
+      .then(() => {
+        console.log("Selected song removed from the server");
+      })
+      .catch((error) => {
+        console.error("Error removing selected song:", error);
+      });
   };
 
   const handleSearchQueryChange = (event) => {
