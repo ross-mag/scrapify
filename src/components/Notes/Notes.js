@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function Notes({ notes, getNotes }) {
   useEffect(() => {
     getNotes();
-  }, [getNotes]);
+  }, []);
 
   return (
     <div className="notes">

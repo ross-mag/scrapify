@@ -8,6 +8,7 @@ function Search() {
   const { selectedSongs, setSelectedSongs, submitSongs } = useContext(SelectedSongsContext);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [songCoverArt, setSongCoverArt] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,6 +22,26 @@ function Search() {
     localStorage.setItem('selectedSongs', JSON.stringify(selectedSongs));
   }, [selectedSongs]);
 
+  // const handleSongSelect = (song) => {
+  //   const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
+
+  //   if (isSelected) {
+  //     setSelectedSongs((prevSelectedSongs) =>
+  //       prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
+  //     );
+  //   } else if (selectedSongs.length < 3) {
+  //     setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
+  //   }
+
+  //   axios.post("http://localhost:2020/selectedSongs", { song })
+  //     .then(() => {
+  //       console.log("Selected songs updated on the server");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error updating selected songs:", error);
+  //     });
+  // };
+
   const handleSongSelect = (song) => {
     const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
 
@@ -31,14 +52,6 @@ function Search() {
     } else if (selectedSongs.length < 3) {
       setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
-
-    axios.post("http://localhost:2020/selectedSongs", { song })
-      .then(() => {
-        console.log("Selected songs updated on the server");
-      })
-      .catch((error) => {
-        console.error("Error updating selected songs:", error);
-      });
   };
 
   const handleSearchQueryChange = (event) => {
@@ -117,9 +130,10 @@ function Search() {
         <h3>Selected Songs:</h3>
         <ul>
           {selectedSongs.map((song) => (
-            <li key={song.id}>
+            <div key={song.id}>
               <p>{song.name}</p> by <p>{song.artists[0].name}</p>
-            </li>
+              <p>{song.description}</p>
+            </div>
           ))}
         </ul>
       </div>

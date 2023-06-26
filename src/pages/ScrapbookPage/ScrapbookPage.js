@@ -8,6 +8,7 @@ import { SelectedSongsProvider } from '../../SelectedSongsContext';
 function ScrapbookPage() {
   const [notes, setNotes] = useState(null);
   const [selectedSongs, setSelectedSongs] = useState([]);
+  // const [songCoverArt, setSongCoverArt] = useState({});
 
   useEffect(() => {
     getSelectedSongs();
@@ -15,14 +16,13 @@ function ScrapbookPage() {
 
   const getSelectedSongs = async () => {
     try {
-      const response = await
-        axios
-          .get("http://localhost:2020/selectedSongs");
-      setSelectedSongs(response.data);
+      const response = await axios.get("http://localhost:2020/selectedSongs");
+      const selectedSongs = response.data;
+      setSelectedSongs(selectedSongs);
     } catch (error) {
       console.error('Error:', error);
     }
-  };
+  }; 
 
   const handleSongSelect = (song) => {
     const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
