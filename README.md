@@ -3,12 +3,14 @@
 
 A web app that creates a digital scrapbook page with three journal entries and three songs from Spotify
 
+
 ## Tech stacks used
 
 - React
 - Node.js
 - Express.js
 - Sass
+
 
 ## Features and/or Usage Instructions
 
@@ -39,4 +41,5 @@ To use the application, follow these steps:
 
 ## API References
 
-Spotify API: Documentation
+Spotify API:
+- https://developer.spotify.com/documentation/web-api
