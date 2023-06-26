@@ -62,7 +62,7 @@ function Search() {
             .then((searchResponse) => {
               if (searchResponse.status === 200) {
                 const data = searchResponse.data;
-                const slicedResults = data.slice(0, 5);
+                const slicedResults = data.slice(0, 8);
                 setSearchResults(slicedResults);
               } else {
                 console.error('Error:', searchResponse.data.error);
@@ -98,6 +98,9 @@ function Search() {
         >
           <div>
             <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+            {song.album?.images[2]?.url && (
+              <img src={song.album.images[2].url} alt="Cover Art" />
+            )}
           </div>
           <p>
             {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
