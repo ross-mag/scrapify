@@ -21,7 +21,7 @@ function App() {
           </Routes>
         </SelectedSongsProvider>
       </BrowserRouter>
-    </div>
+    </div >
   );
 }
 

@@ -1,13 +1,16 @@
 import Search from "../../components/Search/Search";
-import { SelectedSongsProvider } from '../../SelectedSongsContext';
+import { useContext } from "react";
+import { SelectedSongsContext } from "../../SelectedSongsContext";
 
 function MusicPage() {
+  const { selectedSongs } = useContext(SelectedSongsContext);
+
+  console.log("Selected Songs in MusicPage:", selectedSongs);
+
   return (
-    <SelectedSongsProvider>
-      <div className="music-page">
-        <Search />
-      </div>
-    </SelectedSongsProvider>
+    <div className="music-page">
+      <Search />
+    </div>
   );
 }
 

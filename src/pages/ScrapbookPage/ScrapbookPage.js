@@ -9,6 +9,8 @@ function ScrapbookPage() {
   const [notes, setNotes] = useState(null);
   const { selectedSongs } = useContext(SelectedSongsContext);
 
+  console.log("Selected Songs in scrapbookpage:", selectedSongs);
+
   const getNotes = () => {
     axios
       .get("http://localhost:2020/notes")
@@ -26,7 +28,6 @@ function ScrapbookPage() {
         <Notes notes={notes} getNotes={getNotes} />
         <Songs selectedSongs={selectedSongs} />
       </div>
-
   );
 }
 

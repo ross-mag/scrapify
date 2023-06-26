@@ -7,6 +7,7 @@ const SelectedSongsProvider = ({ children }) => {
 
   const submitSongs = () => {
     setSelectedSongs([]);
+    console.log(selectedSongs);
   };
 
   return (
