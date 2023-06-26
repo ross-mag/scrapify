@@ -26,7 +26,7 @@ This project is a web application that allows users to search for songs and crea
 Using your own credentials
 You will need to register your app and get your own credentials from the Spotify for Developers Dashboard.
 
-Back-end here: https://github.com/rossmagp/scrapify
+Back-end here: https://github.com/rossmagp/scrapify-server
 
 To use the application, follow these steps:
 
@@ -39,7 +39,4 @@ To use the application, follow these steps:
 
 ## API References
 
-Provide references to any external APIs used in the project. For example:
-
 Spotify API: Documentation
-Feel free to customize and expand the README based on your project's specific requirements and details.
