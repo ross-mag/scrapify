@@ -1,15 +1,19 @@
 import "./ScrapbookPage.scss";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import Notes from "../../components/Notes/Notes";
 import Songs from "../../components/Songs/Songs";
 import { SelectedSongsContext } from "../../SelectedSongsContext";
 
 function ScrapbookPage() {
+  const { selectedSongs, setSelectedSongs } = useContext(SelectedSongsContext);
   const [notes, setNotes] = useState(null);
-  const { selectedSongs } = useContext(SelectedSongsContext);
 
   console.log("Selected Songs in scrapbookpage:", selectedSongs);
+
+  useEffect(() => {
+    setSelectedSongs(selectedSongs);
+  }, [selectedSongs, setSelectedSongs]);
 
   const getNotes = () => {
     axios

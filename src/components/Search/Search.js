@@ -10,17 +10,6 @@ function Search() {
   const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const storedSelectedSongs = localStorage.getItem('selectedSongs');
-    if (storedSelectedSongs) {
-      setSelectedSongs(JSON.parse(storedSelectedSongs));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('selectedSongs', JSON.stringify(selectedSongs));
-  }, [selectedSongs]);
-
   const handleSongSelect = (song) => {
     const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
 
@@ -41,6 +30,14 @@ function Search() {
       .catch((error) => {
         console.error("Error updating selected songs:", error);
       });
+  };
+
+  const handleSongRemove = (song) => {
+    setSelectedSongs((prevSelectedSongs) =>
+      prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
+    );
+
+    console.log("Selected Songs:", selectedSongs); // Added console.log statement
   };
 
   const handleSearchQueryChange = (event) => {
@@ -121,6 +118,7 @@ function Search() {
           {selectedSongs.map((song) => (
             <div key={song.id}>
               <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+              <button onClick={() => handleSongRemove(song)}>Remove</button>
             </div>
           ))}
         </ul>
