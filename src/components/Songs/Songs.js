@@ -1,6 +1,7 @@
 import "./Songs.scss";
 
 function Songs({ selectedSongs }) {
+
   return (
     <div className="selected-songs">
       <h3>Selected Songs:</h3>
@@ -12,7 +13,7 @@ function Songs({ selectedSongs }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export default Songs
