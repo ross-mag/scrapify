@@ -14,9 +14,6 @@ function Songs({ selectedSongs }) {
                 <img src={song.album.images[1].url} alt="Cover Art" />
               )}
               <p>{song.name}</p> by <p>{song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
-
-              {/* <img src={song.album.images[1].url} alt="Cover Art" /> */}
-              {/* <p>{song.name}</p> by <p>{song.artists[0].name}</p> */}
             </div>
           ))}
       </ul>
