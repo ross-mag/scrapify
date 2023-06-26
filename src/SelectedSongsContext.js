@@ -10,13 +10,25 @@ const SelectedSongsProvider = ({ children }) => {
     axios
       .get('http://localhost:2020/selectedSongs')
       .then((response) => {
-        setSelectedSongs(response.data);
+        setSelectedSongs(response.data.map((song) => ({ ...song, coverArt: '' })));
         console.log('Selected songs retrieved from the server');
       })
       .catch((error) => {
         console.error('Error retrieving selected songs:', error);
       });
-  }, []);
+  }, []);  
+
+  // useEffect(() => {
+  //   axios
+  //     .get('http://localhost:2020/selectedSongs')
+  //     .then((response) => {
+  //       setSelectedSongs(response.data);
+  //       console.log('Selected songs retrieved from the server');
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error retrieving selected songs:', error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     axios
@@ -29,13 +41,8 @@ const SelectedSongsProvider = ({ children }) => {
       });
   }, [selectedSongs]);
 
-  const submitSongs = () => {
-    setSelectedSongs([]);
-    console.log(selectedSongs);
-  };
-
   return (
-    <SelectedSongsContext.Provider value={{ selectedSongs, setSelectedSongs, submitSongs }}>
+    <SelectedSongsContext.Provider value={{ selectedSongs, setSelectedSongs }}>
       {children}
     </SelectedSongsContext.Provider>
   );

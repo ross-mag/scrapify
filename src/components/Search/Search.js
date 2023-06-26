@@ -2,13 +2,11 @@ import "./Search.scss";
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { SelectedSongsContext } from '../../SelectedSongsContext';
-import { useNavigate } from 'react-router-dom';
 
 function Search() {
   const { selectedSongs, setSelectedSongs } = useContext(SelectedSongsContext);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const navigate = useNavigate();
 
   const handleSongSelect = (song) => {
     const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
@@ -82,12 +80,6 @@ function Search() {
       });
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   submitSongs();
-  //   navigate('/scrapbook');
-  // };
-
   return (
     <div>
       <form onSubmit={handleSearch}>
@@ -117,13 +109,13 @@ function Search() {
         <ul>
           {selectedSongs.map((song) => (
             <div key={song.id}>
+              <img src={song.album.images[1].url} alt="Cover Art" />
               <p>{song.name}</p> by <p>{song.artists[0].name}</p>
               <button onClick={() => handleSongRemove(song)}>Remove</button>
             </div>
           ))}
         </ul>
       </div>
-      {/* <button onClick={handleSubmit} disabled={selectedSongs.length === 0}>Submit</button> */}
     </div>
   );
 }
