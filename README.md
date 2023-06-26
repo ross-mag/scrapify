@@ -10,7 +10,7 @@ A web app that creates a digital scrapbook page with three journal entries and t
 - Express.js
 - Sass
 
-## Features
+## Features and/or Usage Instructions
 
 This project is a web application that allows users to search for songs and create a scrapbook with their selected songs. It utilizes the Spotify API for song search and authentication.
 
@@ -19,7 +19,7 @@ Following installation, these are the usage instructions:
 - Search for songs, select up to three songs, and submit them to create a scrapbook page.
 
 
-## Features and/or Usage Instructions
+## Installation
 
 This project is a web application that allows users to search for songs and create a scrapbook with their selected songs. It utilizes the Spotify API for song search and authentication.
 
