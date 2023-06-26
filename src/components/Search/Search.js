@@ -1,46 +1,92 @@
 import "./Search.scss";
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { SelectedSongsContext } from '../../SelectedSongsContext';
+import { useNavigate } from 'react-router-dom';
 
-function Search({ selectedSongs, handleSongSelect }) {
+function Search() {
+  const { selectedSongs, setSelectedSongs, submitSongs } = useContext(SelectedSongsContext);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedSelectedSongs = localStorage.getItem('selectedSongs');
+    if (storedSelectedSongs) {
+      setSelectedSongs(JSON.parse(storedSelectedSongs));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('selectedSongs', JSON.stringify(selectedSongs));
+  }, [selectedSongs]);
+
+  const handleSongSelect = (song) => {
+    const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
+
+    if (isSelected) {
+      setSelectedSongs((prevSelectedSongs) =>
+        prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
+      );
+    } else if (selectedSongs.length < 3) {
+      setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
+    }
+
+    axios.post("http://localhost:2020/selectedSongs", { song })
+      .then(() => {
+        console.log("Selected songs updated on the server");
+      })
+      .catch((error) => {
+        console.error("Error updating selected songs:", error);
+      });
+  };
 
   const handleSearchQueryChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  const handleSearch = async (event) => {
+  const handleSearch = (event) => {
     event.preventDefault();
 
-    try {
-      const accessTokenResponse = await axios.get('http://localhost:2020/getAccessToken');
-      if (accessTokenResponse.status === 200) {
-        const accessTokenData = accessTokenResponse.data;
-        const accessToken = accessTokenData.access_token;
+    axios
+      .get('http://localhost:2020/getAccessToken')
+      .then((accessTokenResponse) => {
+        if (accessTokenResponse.status === 200) {
+          const accessTokenData = accessTokenResponse.data;
+          const accessToken = accessTokenData.access_token;
 
-        const searchResponse = await
           axios
             .get(`http://localhost:2020/search?query=${encodeURIComponent(searchQuery)}`, {
               headers: {
                 'Authorization': `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',
               },
+            })
+            .then((searchResponse) => {
+              if (searchResponse.status === 200) {
+                const data = searchResponse.data;
+                const slicedResults = data.slice(0, 5);
+                setSearchResults(slicedResults);
+              } else {
+                console.error('Error:', searchResponse.data.error);
+              }
+            })
+            .catch((error) => {
+              console.error('Error:', error);
             });
-
-        if (searchResponse.status === 200) {
-          const data = searchResponse.data;
-          const slicedResults = data.slice(0, 5);
-          setSearchResults(slicedResults);
         } else {
-          console.error('Error:', searchResponse.data.error);
+          console.error('Error:', accessTokenResponse.data.error);
         }
-      } else {
-        console.error('Error:', accessTokenResponse.data.error);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submitSongs();
+    navigate('/scrapbook');
   };
 
   return (
@@ -77,8 +123,9 @@ function Search({ selectedSongs, handleSongSelect }) {
           ))}
         </ul>
       </div>
+      <button onClick={handleSubmit} disabled={selectedSongs.length === 0}>Submit</button>
     </div>
   );
 }
 
-export default Search;
+export default Search

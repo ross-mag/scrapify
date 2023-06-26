@@ -53,7 +53,7 @@ function AddNotes({ notes, getNotes }) {
       <form className="add-notes__form" onSubmit={handleSubmit}>
         <div className="form__container">
           <div className="form__note">
-            <label for="note1" className="form__label">
+            <label htmlFor="note1" className="form__label">
               Note #1
               <input
                 type="textarea"
@@ -66,7 +66,7 @@ function AddNotes({ notes, getNotes }) {
             </label>
           </div>
           <div className="form__note">
-            <label for="note2" className="form__label">
+            <label htmlFor="note2" className="form__label">
               Note #2
               <input
                 type="textarea"
@@ -79,7 +79,7 @@ function AddNotes({ notes, getNotes }) {
             </label>
           </div>
           <div className="form__note">
-            <label for="note3" className="form__label">
+            <label htmlFor="note3" className="form__label">
               Note #3
               <input
                 type="textarea"

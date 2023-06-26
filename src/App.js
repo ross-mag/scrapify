@@ -5,18 +5,21 @@ import HomePage from "./pages/HomePage/HomePage";
 import MusicPage from "./pages/MusicPage/MusicPage";
 import JournalPage from "./pages/JournalPage/JournalPage";
 import ScrapbookPage from "./pages/ScrapbookPage/ScrapbookPage";
+import { SelectedSongsProvider } from './SelectedSongsContext';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/music" element={<MusicPage />} />
-          <Route path="/journal" element={<JournalPage />} />
-          <Route path="/scrapbook" element={<ScrapbookPage />} />
-        </Routes>
+        <SelectedSongsProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/music" element={<MusicPage />} />
+            <Route path="/journal" element={<JournalPage />} />
+            <Route path="/scrapbook" element={<ScrapbookPage />} />
+          </Routes>
+        </SelectedSongsProvider>
       </BrowserRouter>
     </div>
   );
