@@ -37,14 +37,14 @@ function Search() {
 
     console.log("Selected Songs:", selectedSongs);
 
-    axios
-      .delete(`http://localhost:2020/selectedSongs/${song.id}`)
-      .then(() => {
-        console.log("Selected song removed from the server");
-      })
-      .catch((error) => {
-        console.error("Error removing selected song:", error);
-      });
+    // axios
+    //   .delete(`http://localhost:2020/selectedSongs/${song.id}`)
+    //   .then(() => {
+    //     console.log("Selected song removed from the server");
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error removing selected song:", error);
+    //   });
   };
 
   const handleSearchQueryChange = (event) => {
@@ -118,8 +118,11 @@ function Search() {
         <ul>
           {selectedSongs.map((song) => (
             <div key={song.id}>
-              <img src={song.album.images[1].url} alt="Cover Art" />
-              <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+              {song.album?.images[1]?.url && (
+                <img src={song.album.images[1].url} alt="Cover Art" />
+              )}
+              <p>{song.name}</p> by <p>{song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
+              {/* <p>{song.name}</p> by <p>{song.artists[0].name}</p> */}
               <button onClick={() => handleSongRemove(song)}>Remove</button>
             </div>
           ))}

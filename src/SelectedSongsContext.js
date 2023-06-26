@@ -18,18 +18,6 @@ const SelectedSongsProvider = ({ children }) => {
       });
   }, []);  
 
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:2020/selectedSongs')
-  //     .then((response) => {
-  //       setSelectedSongs(response.data);
-  //       console.log('Selected songs retrieved from the server');
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error retrieving selected songs:', error);
-  //     });
-  // }, []);
-
   useEffect(() => {
     axios
       .post('http://localhost:2020/selectedSongs', { song: selectedSongs })
