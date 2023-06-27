@@ -41,6 +41,7 @@
   justify-content: flex-start;
   flex-direction: column;
   width: 50%;
+  margin: 0 2rem 0 2rem;
 
   &__song-details-container {
     display: flex;
@@ -124,6 +125,58 @@
   }
 }
 
+.selected-songs {
+  width: 50%;
+  margin: 0 2rem 0 2.5rem;
+
+  &__header {
+    padding: 0 1rem 1rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  &__song-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2rem 2rem;
+  }
+}
+
+.selected-song {
+  
+  &__song-name {
+    padding: 0.2rem;
+    display: flex;
+    font-size: 1.1rem;
+  }
+
+  &__artist-name {
+    padding: 0.2rem;
+    display: flex;
+    font-size: 1.1rem;
+  }
+
+  &__info-container {
+    display: flex;
+  }
+
+  &__image {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  &__button-remove {
+    border: none;
+    outline: none;
+    width: 12rem;
+    height: 2rem;
+    border-radius: 8px;
+    }
+
+  &__button-remove:hover {
+    background-color: rgb(222, 222, 222);
+  }
+}
+
 .selected {
   background-color: #d4cae3;
   border: none;
@@ -139,12 +192,4 @@
 
 .unselected:hover {
   background-color: #bfafd7;
-}
-
-.selected-songs {
-  width: 50%;
-
-  &__header {
-    padding: 0 0 1rem 0;
-  }
 }

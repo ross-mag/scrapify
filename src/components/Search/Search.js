@@ -124,17 +124,28 @@ function Search() {
           </div>
         </div>
         <div className="selected-songs">
-          <h3 className="selected-songs__header">Selected Songs:</h3>
+          <h2 className="selected-songs__header">Selected Songs:</h2>
           <ul>
+
             {selectedSongs.map((song) => (
-              <div key={song.id}>
+              <div key={song.id} className="selected-songs__song-container">
+
                 {song.album?.images[1]?.url && (
-                  <img src={song.album.images[1].url} alt="Cover Art" />
+                  <div className="selected-song__image-container">
+                    <img className="selected-song__image" src={song.album.images[1].url} alt="Song Cover Art" />
+                  </div>
                 )}
-                <p>{song.name}</p> by <p>{song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
-                <button onClick={() => handleSongRemove(song)}>Remove</button>
+
+                <div className="selected-song__info-container">
+                  <p className="selected-song__song-name">{song.name}</p>
+                  <p className="selected-song__artist-name">by {song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
+                </div>
+
+                <button className="selected-song__button-remove" onClick={() => handleSongRemove(song)}>Remove</button>
+
               </div>
             ))}
+
           </ul>
         </div>
       </div>
