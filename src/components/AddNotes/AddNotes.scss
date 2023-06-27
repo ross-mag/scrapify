@@ -8,6 +8,8 @@
   &__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   &__note {
@@ -16,5 +18,31 @@
 
   &__button {
     margin: 1rem;
+  }
+}
+
+.add-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    font-size: 1.2rem;
+    margin: 4rem 2rem 1rem 2rem;
+    padding: 0rem;
+  }
+
+  &__notes-container {
+    display: flex;
+  }
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+
+  &__input {
+    margin: 1rem 0 0 0;
   }
 }

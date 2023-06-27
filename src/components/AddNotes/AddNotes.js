@@ -50,55 +50,68 @@ function AddNotes({ notes, getNotes }) {
   return (
     <div className="add-notes">
       <h2 className="add-notes__header">Add Notes</h2>
-      <form className="add-notes__form" onSubmit={handleSubmit}>
-        <div className="form__container">
-          <div className="form__note">
-            <label htmlFor="note1" className="form__label">
-              Note #1
-              <input
-                type="textarea"
-                name="content1"
-                id="note1"
-                value={content1}
-                onChange={handleContentChange1}
-              >
-              </input>
-            </label>
-          </div>
-          <div className="form__note">
-            <label htmlFor="note2" className="form__label">
-              Note #2
-              <input
-                type="textarea"
-                name="content2"
-                id="note2"
-                value={content2}
-                onChange={handleContentChange2}
-              >
-              </input>
-            </label>
-          </div>
-          <div className="form__note">
-            <label htmlFor="note3" className="form__label">
-              Note #3
-              <input
-                type="textarea"
-                name="content3"
-                id="note3"
-                value={content3}
-                onChange={handleContentChange3}
-              >
-              </input>
-            </label>
-          </div>
-        </div>
 
-        <button className="form__button">Add Notes</button>
+      <div className="form__container">
+        <form className="add-notes__form" onSubmit={handleSubmit}>
 
-        {isSuccess && "Added notes"}
-        {errorMessage}
-      </form>
-    </div >
+          <div className="form__note-button-container">
+
+            <div className="add-notes__notes-container">
+
+              <div className="note">
+
+                <label htmlFor="note1" className="note__label"></label>
+                  Note #1
+                  <textarea
+                    className="note__input"
+                    name="content1"
+                    id="note1"
+                    value={content1}
+                    onChange={handleContentChange1}
+                  >
+                  </textarea>
+                
+              </div>
+              <div className="note">
+
+                <label htmlFor="note2" className="note__label"></label>
+                  Note #2
+                  <textarea
+                    className="note__input"
+                    name="content2"
+                    id="note2"
+                    value={content2}
+                    onChange={handleContentChange2}
+                  >
+                  </textarea>
+                
+              </div>
+              <div className="note">
+
+                <label htmlFor="note3" className="note__label"></label>
+                  Note #3
+                  <textarea
+                    className="note__input"
+                    name="content3"
+                    id="note3"
+                    value={content3}
+                    onChange={handleContentChange3}
+                  >
+                  </textarea>
+                
+              </div>
+            </div>
+            <div className="form__button-container">
+              <button className="form__button">Add Notes</button>
+            </div>
+          </div>
+          
+          {isSuccess && "Added notes"}
+          {errorMessage}
+
+        </form >
+      </div>
+    </div>
   );
 }
 
