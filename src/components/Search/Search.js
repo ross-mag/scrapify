@@ -88,7 +88,7 @@ function Search() {
         />
         <button className="search__submit" type="submit">Search</button>
       </form>
-      
+
       <div className="search-results">
         {searchResults && searchResults.map((song) => (
           <button
@@ -96,12 +96,16 @@ function Search() {
             onClick={() => handleSongSelect(song)}
             className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : 'unselected'}
           >
-            <div>
-              <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+
+            <div className="search-results__item-container">
+              <div className="song-details__container">
+                <p className="song-details">{song.name}</p> by <p className="song-details">{song.artists[0].name}</p>
+              </div>
               {song.album?.images[2]?.url && (
                 <img src={song.album.images[2].url} alt="Cover Art" />
               )}
             </div>
+
             <p>
               {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
             </p>

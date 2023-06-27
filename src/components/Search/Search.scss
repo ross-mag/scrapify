@@ -37,8 +37,23 @@
 }
 
 .search-results {
+  margin: 1.2rem;
   display: flex;
   justify-content: center;
+
+  &__item-container {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.song-details {
+  margin: 0;
+  padding: 0;
+
+  &__container {
+    padding: 0.4rem;
+  }
 }
 
 .selected {
