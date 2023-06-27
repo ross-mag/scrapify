@@ -19,8 +19,6 @@ function Search() {
       setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
 
-    console.log("Selected Songs:", selectedSongs);
-
     axios.post("http://localhost:2020/selectedSongs", { song })
       .then(() => {
         console.log("Selected songs updated on the server");
@@ -34,8 +32,6 @@ function Search() {
     setSelectedSongs((prevSelectedSongs) =>
       prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
     );
-
-    console.log("Selected Songs:", selectedSongs);
   };
 
   const handleSearchQueryChange = (event) => {

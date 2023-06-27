@@ -9,8 +9,6 @@ function ScrapbookPage() {
   const { selectedSongs, setSelectedSongs } = useContext(SelectedSongsContext);
   const [notes, setNotes] = useState(null);
 
-  console.log("Selected Songs in scrapbookpage:", selectedSongs);
-
   useEffect(() => {
     setSelectedSongs(selectedSongs);
   }, [selectedSongs, setSelectedSongs]);

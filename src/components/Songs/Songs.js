@@ -1,7 +1,6 @@
 import "./Songs.scss";
 
 function Songs({ selectedSongs }) {
-  console.log("Selected Songs:", selectedSongs);
 
   return (
     <div className="selected-songs">
