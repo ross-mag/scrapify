@@ -78,31 +78,37 @@ function Search() {
 
   return (
     <div>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="search__form">
         <input
           type="text"
+          className="search__input"
           value={searchQuery}
+          placeholder="search for songs"
           onChange={handleSearchQueryChange}
         />
-        <button type="submit">Search</button>
+        <button className="search__submit" type="submit">Search</button>
       </form>
-      {searchResults && searchResults.map((song) => (
-        <button
-          key={song.id}
-          onClick={() => handleSongSelect(song)}
-          className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : 'unselected'}
-        >
-          <div>
-            <p>{song.name}</p> by <p>{song.artists[0].name}</p>
-            {song.album?.images[2]?.url && (
-              <img src={song.album.images[2].url} alt="Cover Art" />
-            )}
-          </div>
-          <p>
-            {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
-          </p>
-        </button>
-      ))}
+      
+      <div className="search-results">
+        {searchResults && searchResults.map((song) => (
+          <button
+            key={song.id}
+            onClick={() => handleSongSelect(song)}
+            className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : 'unselected'}
+          >
+            <div>
+              <p>{song.name}</p> by <p>{song.artists[0].name}</p>
+              {song.album?.images[2]?.url && (
+                <img src={song.album.images[2].url} alt="Cover Art" />
+              )}
+            </div>
+            <p>
+              {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
+            </p>
+          </button>
+        ))}
+      </div>
+
       <div className="selected-songs">
         <h3>Selected Songs:</h3>
         <ul>

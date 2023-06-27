@@ -1,3 +1,53 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.search {
+
+  &__input {
+    margin: 1rem;
+    padding: 0.4rem;
+    width: 18rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+  }
+
+  &__submit {
+    height: 1.8rem;
+    width: 4.2rem;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    background-color: #9e8db7;
+  }
+
+  &__submit:hover {
+    background-color: #796c8d;
+  }
+}
+
+.search-results {
+  display: flex;
+  justify-content: center;
+}
+
+.selected {
+  background-color: #d4cae3;
+  border: none;
+  margin: 0.8rem;
+}
+
+.unselected {
+  background-color: lavender;
+  border: none;
+}
