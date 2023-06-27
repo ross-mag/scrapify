@@ -88,45 +88,57 @@ function Search() {
         />
         <button className="search__submit" type="submit">Search</button>
       </form>
+      <div className="songs">
+        <div className="search-results">
+          <div className="search-results__button-container">
+            {searchResults && searchResults.map((song) => (
+              <button
+                key={song.id}
+                onClick={() => handleSongSelect(song)}
+                className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : 'unselected'}
+              >
+                <div className="search-results__item-container">
+                  <div className="search-results__song-details-container">
+                    <div className="song-details__cover-art-container">
+                      {song.album?.images[2]?.url && (
+                        <img src={song.album.images[2].url} className="cover-art" alt="Cover Art" />
+                      )}
+                    </div>
+                    <div className="song-details__text-container">
+                      <div className="song-details__song-container">
+                        <p className="song-details__song-name">{song.name}</p>
+                        <p className="song-details__song-artist">{song.artists[0].name}</p>
+                      </div>
+                      <div className="song-details__song-album-container">
+                        <p className="song-details__song-album">{song.album.name}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <p className="search-results__select-tag">
+                    {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
+                  </p> */}
+                </div>
 
-      <div className="search-results">
-        {searchResults && searchResults.map((song) => (
-          <button
-            key={song.id}
-            onClick={() => handleSongSelect(song)}
-            className={selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'selected' : 'unselected'}
-          >
-
-            <div className="search-results__item-container">
-              <div className="song-details__container">
-                <p className="song-details">{song.name}</p> by <p className="song-details">{song.artists[0].name}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="selected-songs">
+          <h3 className="selected-songs__header">Selected Songs:</h3>
+          <ul>
+            {selectedSongs.map((song) => (
+              <div key={song.id}>
+                {song.album?.images[1]?.url && (
+                  <img src={song.album.images[1].url} alt="Cover Art" />
+                )}
+                <p>{song.name}</p> by <p>{song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
+                <button onClick={() => handleSongRemove(song)}>Remove</button>
               </div>
-              {song.album?.images[2]?.url && (
-                <img src={song.album.images[2].url} alt="Cover Art" />
-              )}
-            </div>
-
-            <p>
-              {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
-            </p>
-          </button>
-        ))}
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className="selected-songs">
-        <h3>Selected Songs:</h3>
-        <ul>
-          {selectedSongs.map((song) => (
-            <div key={song.id}>
-              {song.album?.images[1]?.url && (
-                <img src={song.album.images[1].url} alt="Cover Art" />
-              )}
-              <p>{song.name}</p> by <p>{song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
-              <button onClick={() => handleSongRemove(song)}>Remove</button>
-            </div>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }

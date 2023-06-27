@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    margin: 3.2rem 4rem 2.8rem 4rem;
   }
 
   &__submit {
@@ -37,14 +37,45 @@
 }
 
 .search-results {
-  margin: 1.2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 50%;
+
+  &__song-details-container {
+    display: flex;
+    width: 100%;
+  }
 
   &__item-container {
     margin: 0;
     padding: 0;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
+
+  &__select-tag {
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__contents {
+    display: flex;
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+  }
+}
+
+.songs {
+  display: flex;
+  margin: 1.2rem 2rem;
 }
 
 .song-details {
@@ -53,16 +84,67 @@
 
   &__container {
     padding: 0.4rem;
+    display: flex;
+  }
+
+  &__song-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 16rem;
+    height: 4rem;
+  }
+
+  &__song-album-container {
+    width: 12rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__cover-art-container {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 28rem;
+  }
+
+  &__song-name {
+    padding: 0.6rem 0 0 0.5rem;
+    font-size: 1.1rem
+  }
+
+  &__song-artist {
+    padding: 0 0 0.5rem 0.5rem;
   }
 }
 
 .selected {
   background-color: #d4cae3;
   border: none;
-  margin: 0.8rem;
+  margin: 0.2rem 0 0.2rem 0;
 }
 
 .unselected {
+  margin: 0.2rem;
+  width: 32rem;
   background-color: lavender;
   border: none;
+}
+
+.unselected:hover {
+  background-color: #bfafd7;
+}
+
+.selected-songs {
+  width: 50%;
+
+  &__header {
+    padding: 0 0 1rem 0;
+  }
 }
