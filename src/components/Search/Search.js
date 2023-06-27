@@ -83,7 +83,7 @@ function Search() {
           type="text"
           className="search__input"
           value={searchQuery}
-          placeholder="search for songs"
+          placeholder="search for music"
           onChange={handleSearchQueryChange}
         />
         <button className="search__submit" type="submit">Search</button>
