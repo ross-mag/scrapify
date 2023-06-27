@@ -4,20 +4,6 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.nav-arrows {
-    display: flex;
-    justify-content: flex-end;
-
-    &__container {
-        margin: 1rem;
-    }
-
-    &__icon {
-        width: 2rem;
-
-    }
 }

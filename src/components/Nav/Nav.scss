@@ -13,14 +13,18 @@
 }
 
 .list-item {
-  margin: 1rem;
+  margin: 0.8rem;
 
   &__link {
     text-decoration: none;
     color: black;
 
     &.active {
-      text-decoration: underline;
+      border-bottom: 1px solid black;
     }
+  }
+
+  &__link:hover {
+    border-bottom: 1px solid black;
   }
 }

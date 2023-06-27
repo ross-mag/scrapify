@@ -2,20 +2,53 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
+.home-page {
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    font-size: 3.2rem;
+    margin: 4rem 0 0 0;
+    padding: 0;
+  }
+
+  &__subheader {
+    margin: 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .home {
 
   &__button {
     border: none;
     padding: 1rem;
-    background-color: #ac9fbf;
+    background-color: #9e8db7;
     border-radius: 1rem;
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  &__button:hover {
+    background-color: #796c8d;
   }
 }
 
 .button {
+
   &__link {
     text-decoration: none;
     color: black;
-    margin: 1rem;
+    margin: 1.2rem 2rem 0 2rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
   }
 }
