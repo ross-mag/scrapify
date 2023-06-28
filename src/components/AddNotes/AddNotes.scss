@@ -28,7 +28,7 @@
   }
 
   &__button-container {
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -62,7 +62,14 @@
 
   &__input {
     margin: 1rem 0 0 0;
-    height: 24rem;
-    width: 16rem;
+    padding: 1.4rem;
+    height: 20rem;
+    width: 18rem;
+    border: none;
+    background-image: url('../../assets/images/torn-note.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.4rem;
+    font-size: 0.8rem;
   }
 }
