@@ -18,6 +18,19 @@
 
   &__button {
     margin: 1rem;
+    border: none;
+    border-radius: 1.8rem;
+    background-color: #9e8db7;
+  }
+
+  &__button:hover {
+    background-color: #7a7288;
+  }
+
+  &__button-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -28,21 +41,28 @@
 
   &__header {
     font-size: 1.2rem;
-    margin: 4rem 2rem 1rem 2rem;
-    padding: 0rem;
+    padding: 1rem;
+    color: white;
   }
 
   &__notes-container {
     display: flex;
+    margin: 1rem 0;
+  }
+
+  &__form {
+    margin: 2rem;
   }
 }
 
 .note {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  margin: 0 1.2rem;
 
   &__input {
     margin: 1rem 0 0 0;
+    height: 24rem;
+    width: 16rem;
   }
 }

@@ -22,9 +22,9 @@
   }
 
   &__submit {
-    height: 1.8rem;
-    width: 4.2rem;
-    border-radius: 8px;
+    height: 1.9rem;
+    width: 4.8rem;
+    border-radius: 1rem;
     border: none;
     color: white;
     font-size: 1rem;
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   margin: 0 2rem 0 2rem;
 
   &__song-details-container {
@@ -70,13 +70,13 @@
   &__button-container {
     display: flex;
     flex-direction: column;
-    width: 32rem;
+    width: 36rem;
   }
 }
 
 .songs {
   display: flex;
-  margin: 1.2rem 2rem;
+  margin: 1.2rem 6rem;
 }
 
 .song-details {
@@ -91,15 +91,20 @@
   &__song-container {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
-    width: 16rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 20rem;
     height: 4rem;
+    padding-right: 1rem;
+    overflow: hidden;
   }
 
   &__song-album-container {
     width: 12rem;
     display: flex;
     align-items: center;
+    padding-right: 1rem;
+    overflow: hidden;
   }
 
   &__cover-art-container {
@@ -111,33 +116,45 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
-    width: 28rem;
+    align-items: center;
+    width: 32rem;
   }
 
   &__song-name {
     padding: 0.6rem 0 0 0.5rem;
-    font-size: 1.1rem
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: flex;
   }
 
   &__song-artist {
     padding: 0 0 0.5rem 0.5rem;
   }
+
+  &__song-album {
+    padding: 1rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .selected-songs {
-  width: 50%;
-  margin: 0 2rem 0 2.5rem;
+  width: 40%;
+  margin: 0 2rem 0 2rem;
 
   &__header {
-    padding: 0 1rem 1rem 2rem;
+    padding: 0 0 1rem 0;
     font-size: 1.2rem;
   }
 
   &__song-container {
     display: flex;
     flex-direction: column;
-    margin: 0 0 2rem 2rem;
+    margin: 0 0 2rem 0;
   }
 }
 
@@ -146,17 +163,24 @@
   &__song-name {
     padding: 0.2rem;
     display: flex;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__artist-name {
     padding: 0.2rem;
     display: flex;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__info-container {
     display: flex;
+    overflow: hidden;
   }
 
   &__image {
@@ -185,7 +209,7 @@
 
 .unselected {
   margin: 0.2rem;
-  width: 32rem;
+  width: 36rem;
   background-color: lavender;
   border: none;
 }
