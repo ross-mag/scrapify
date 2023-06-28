@@ -114,9 +114,6 @@ function Search() {
                       </div>
                     </div>
                   </div>
-                  {/* <p className="search-results__select-tag">
-                    {selectedSongs.some((selectedSong) => selectedSong.id === song.id) ? 'Deselect' : 'Select'}
-                  </p> */}
                 </div>
 
               </button>

@@ -9,12 +9,12 @@ function HomePage() {
       <div className="button__container">
         <Link to={"/music"} className="button__link" activeclassname="active">
           <button className="home__button">
-            Add Songs
+              Add Songs
           </button>
         </Link>
         <Link to={"/journal"} className="button__link" activeclassname="active">
           <button className="home__button">
-            Journal
+              Journal
           </button>
         </Link>
       </div>
