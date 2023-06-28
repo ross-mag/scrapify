@@ -123,30 +123,23 @@ function Search() {
         <div className="selected-songs">
           <h2 className="selected-songs__header">Selected Songs:</h2>
           <ul>
-
             {selectedSongs.map((song) => (
               <div key={song.id} className="selected-songs__song-container">
-
                 {song.album?.images[1]?.url && (
                   <div className="selected-song__image-container">
                     <img className="selected-song__image" src={song.album.images[1].url} alt="Song Cover Art" />
                   </div>
                 )}
-
                 <div className="selected-song__info-container">
                   <p className="selected-song__song-name">{song.name}</p>
                   <p className="selected-song__artist-name">by {song.artists?.[0]?.name ?? 'Unknown Artist'}</p>
                 </div>
-
                 <button className="selected-song__button-remove" onClick={() => handleSongRemove(song)}>Remove</button>
-
               </div>
             ))}
-
           </ul>
         </div>
       </div>
-
     </div>
   );
 }

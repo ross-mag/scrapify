@@ -41,7 +41,8 @@
   justify-content: flex-start;
   flex-direction: column;
   width: 60%;
-  margin: 0 2rem 0 2rem;
+  margin: 0 2rem;
+  padding: 0 1rem;
 
   &__song-details-container {
     display: flex;
@@ -159,7 +160,7 @@
 }
 
 .selected-song {
-  
+
   &__song-name {
     padding: 0.2rem;
     display: flex;
@@ -188,13 +189,26 @@
     height: 16rem;
   }
 
+  &__image-container {
+    background-image: url('../../assets/images/cd-case.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 0 0 0.4rem 2.2rem;
+    height: 17.4rem;
+    width: 18.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__button-remove {
     border: none;
     outline: none;
     width: 12rem;
     height: 2rem;
     border-radius: 8px;
-    }
+  }
 
   &__button-remove:hover {
     background-color: rgb(222, 222, 222);
@@ -202,7 +216,7 @@
 }
 
 .selected {
-  background-color: #d4cae3;
+  background-color: #c8bed6;
   border: none;
   margin: 0.2rem 0 0.2rem 0;
 }
@@ -210,10 +224,10 @@
 .unselected {
   margin: 0.2rem;
   width: 36rem;
-  background-color: lavender;
+  background-color: rgb(212, 212, 238);
   border: none;
 }
 
 .unselected:hover {
-  background-color: #bfafd7;
+  background-color: #c4bad5;
 }
