@@ -16,6 +16,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 0;
 
   &__song-container {
     margin: 0 2rem;
@@ -41,6 +42,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color: rgba(199, 199, 221, 0.696);
   }
 
   &__artist-name {
@@ -50,6 +52,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color: rgba(199, 199, 221, 0.696);
   }
 
   &__info-container {

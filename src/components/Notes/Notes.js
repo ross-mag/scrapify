@@ -11,15 +11,25 @@ function Notes({ notes, getNotes }) {
       <ul className="notes__list">
         {notes ? (
           <div className="notes__container" key={notes.id}>
-            <li className="notes__list-item">
-              {notes.content1}
-            </li>
-            <li className="notes__list-item">
-              {notes.content2}
-            </li>
-            <li className="notes__list-item">
-              {notes.content3}
-            </li>
+            
+            <div className="notes__item-container">
+              <p className="notes__item">
+                {notes.content1}
+              </p>
+            </div>
+
+            <div className="notes__item-container">
+              <p className="notes__item">
+                {notes.content2}
+              </p>
+            </div>
+
+            <div className="notes__item-container">
+              <p className="notes__item">
+                {notes.content3}
+              </p>
+            </div>
+
           </div>
         ) : (
           "Loading notes..."

@@ -1,3 +1,31 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.notes {
+  width: 100%;
+  margin: 0 2rem 6rem 2rem;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__item-container {
+    margin: 1rem 4rem 0 2rem;
+    padding: 2rem;
+    width: 18rem;
+    height: 24rem;
+    background-image: url('../../assets/images/loose-leaf-2.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

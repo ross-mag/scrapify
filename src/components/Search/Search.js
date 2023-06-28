@@ -58,7 +58,7 @@ function Search() {
             .then((searchResponse) => {
               if (searchResponse.status === 200) {
                 const data = searchResponse.data;
-                const slicedResults = data.slice(0, 8);
+                const slicedResults = data.slice(0, 10);
                 setSearchResults(slicedResults);
               } else {
                 console.error('Error:', searchResponse.data.error);
