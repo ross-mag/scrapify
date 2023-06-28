@@ -1,3 +1,4 @@
+import "./MusicPage.scss";
 import Search from "../../components/Search/Search";
 
 function MusicPage() {

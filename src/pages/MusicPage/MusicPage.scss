@@ -1,3 +1,12 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.music-page {
+  background-image: url('../../assets/images/blank-white-notepaper-design-vector_53876-161342.avif');
+  background-size: auto;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vh;
+  padding-top: 1.4rem;
+}
