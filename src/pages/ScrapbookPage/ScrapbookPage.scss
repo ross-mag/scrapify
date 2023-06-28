@@ -1,3 +1,14 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.scrapbook-page {
+  background-image: url('../../assets/images/crumpled-paper.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vh;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}

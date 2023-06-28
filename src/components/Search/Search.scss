@@ -168,6 +168,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color: rgb(222, 228, 230);
   }
 
   &__artist-name {
@@ -177,11 +178,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-color: rgb(222, 228, 230);
   }
 
   &__info-container {
     display: flex;
     overflow: hidden;
+    margin: 0.2rem 0 0.4rem 0;
   }
 
   &__image {
@@ -208,10 +211,11 @@
     width: 12rem;
     height: 2rem;
     border-radius: 8px;
+    background-color: #afa4c2;
   }
 
   &__button-remove:hover {
-    background-color: rgb(222, 222, 222);
+    background-color: #9589a7;
   }
 }
 

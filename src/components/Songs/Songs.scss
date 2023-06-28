@@ -1,3 +1,79 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
+
+.songs {
+  width: 100%;
+  margin: 0;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.selected-songs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__song-container {
+    margin: 0 2rem;
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.songs {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 2rem;
+}
+
+.selected-song {
+
+  &__song-name {
+    padding: 0.2rem;
+    display: flex;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__artist-name {
+    padding: 0.2rem;
+    display: flex;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 0 0.4rem 0;
+  }
+
+  &__image {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  &__image-container {
+    background-image: url('../../assets/images/cd-case.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 0 0 0.22rem 1.4rem;
+    height: 13rem;
+    width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
