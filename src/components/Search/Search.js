@@ -17,7 +17,7 @@ function Search() {
     } else if (selectedSongs.length < 3) {
       setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
-    axios.post("http://localhost:2020/selectedSongs", { song })
+    axios.post(process.env.REACT_APP_API_URL + '/selectedSongs', { song })
       .then(() => {
         console.log("Selected songs updated on the server");
       })
@@ -39,13 +39,13 @@ function Search() {
   const handleSearch = (event) => {
     event.preventDefault();
     axios
-      .get('http://localhost:2020/getAccessToken')
+      .get(process.env.REACT_APP_API_URL + '/getAccessToken')
       .then((accessTokenResponse) => {
         if (accessTokenResponse.status === 200) {
           const accessTokenData = accessTokenResponse.data;
           const accessToken = accessTokenData.access_token;
           axios
-            .get(`http://localhost:2020/search?query=${encodeURIComponent(searchQuery)}`, {
+            .get(`${process.env.REACT_APP_API_URL}/search?query=${encodeURIComponent(searchQuery)}`, {
               headers: {
                 'Authorization': `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',

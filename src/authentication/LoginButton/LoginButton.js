@@ -3,7 +3,7 @@ import axios from "axios";
 
 function LoginButton() {
   const handleLogin = () => {
-    axios.get('http://localhost:1020/login')
+    axios.get(process.env.REACT_APP_API_URL + '/login')
       .then(response => {
         window.location.href = response.data.redirectUrl;
       })

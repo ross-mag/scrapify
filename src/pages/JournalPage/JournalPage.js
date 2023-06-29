@@ -8,7 +8,7 @@ function JournalPage() {
 
   const getNotes = () => {
     axios
-      .get("http://localhost:2020/notes"
+      .get(process.env.REACT_APP_API_URL + '/notes'
       )
       .then((response) => {
         setNotes(response.data);

@@ -14,7 +14,7 @@ function AddNotes({ notes, getNotes }) {
 
     axios
       .post(
-        "http://localhost:2020/notes",
+        process.env.REACT_APP_API_URL + '/notes',
         {
           content1: event.target.content1.value,
           content2: event.target.content2.value,

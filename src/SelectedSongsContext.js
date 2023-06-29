@@ -8,7 +8,7 @@ const SelectedSongsProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:2020/selectedSongs')
+      .get(process.env.REACT_APP_API_URL + '/selectedSongs')
       .then((response) => {
         setSelectedSongs(response.data.map((song) => ({ ...song, coverArt: '' })));
         console.log('Selected songs retrieved from the server');
@@ -20,7 +20,7 @@ const SelectedSongsProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .post('http://localhost:2020/selectedSongs', { song: selectedSongs })
+      .post(process.env.REACT_APP_API_URL + '/selectedSongs', { song: selectedSongs })
       .then(() => {
         console.log('Selected songs updated on the server');
       })
