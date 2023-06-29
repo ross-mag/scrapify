@@ -10,7 +10,6 @@ function Search() {
 
   const handleSongSelect = (song) => {
     const isSelected = selectedSongs.some((selectedSong) => selectedSong.id === song.id);
-
     if (isSelected) {
       setSelectedSongs((prevSelectedSongs) =>
         prevSelectedSongs.filter((selectedSong) => selectedSong.id !== song.id)
@@ -18,7 +17,6 @@ function Search() {
     } else if (selectedSongs.length < 3) {
       setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
     }
-
     axios.post("http://localhost:2020/selectedSongs", { song })
       .then(() => {
         console.log("Selected songs updated on the server");
@@ -40,14 +38,12 @@ function Search() {
 
   const handleSearch = (event) => {
     event.preventDefault();
-
     axios
       .get('http://localhost:2020/getAccessToken')
       .then((accessTokenResponse) => {
         if (accessTokenResponse.status === 200) {
           const accessTokenData = accessTokenResponse.data;
           const accessToken = accessTokenData.access_token;
-
           axios
             .get(`http://localhost:2020/search?query=${encodeURIComponent(searchQuery)}`, {
               headers: {

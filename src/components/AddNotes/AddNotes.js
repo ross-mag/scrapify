@@ -29,7 +29,6 @@ function AddNotes({ notes, getNotes }) {
         setContent2("");
         setContent3("");
       })
-
       .catch((error) => {
         setErrorMessage(error.response.data);
       });
@@ -49,12 +48,9 @@ function AddNotes({ notes, getNotes }) {
 
   return (
     <div className="add-notes">
-
       <div className="form__container">
         <form className="add-notes__form" onSubmit={handleSubmit}>
-
           <div className="form__note-button-container">
-
             <div className="form__button-container">
               <button className="form__button">
                 <h2 className="add-notes__header">Add Notes</h2>
@@ -62,11 +58,8 @@ function AddNotes({ notes, getNotes }) {
               {isSuccess && "Added notes"}
               {errorMessage}
             </div>
-
             <div className="add-notes__notes-container">
-
               <div className="note">
-
                 <label htmlFor="note1" className="note__label"></label>
                 Note #1
                 <textarea
@@ -77,10 +70,8 @@ function AddNotes({ notes, getNotes }) {
                   onChange={handleContentChange1}
                 >
                 </textarea>
-
               </div>
               <div className="note">
-
                 <label htmlFor="note2" className="note__label"></label>
                 Note #2
                 <textarea
@@ -91,10 +82,8 @@ function AddNotes({ notes, getNotes }) {
                   onChange={handleContentChange2}
                 >
                 </textarea>
-
               </div>
               <div className="note">
-
                 <label htmlFor="note3" className="note__label"></label>
                 Note #3
                 <textarea
@@ -105,11 +94,9 @@ function AddNotes({ notes, getNotes }) {
                   onChange={handleContentChange3}
                 >
                 </textarea>
-
               </div>
             </div>
           </div>
-
         </form >
       </div>
     </div>
