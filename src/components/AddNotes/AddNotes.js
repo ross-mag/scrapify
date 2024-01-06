@@ -1,8 +1,7 @@
 import "./AddNotes.scss";
-import axios from "axios";
 import { useState } from "react";
 
-function AddNotes({ notes, getNotes }) {
+function AddNotes() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [content1, setContent1] = useState("");
@@ -12,26 +11,21 @@ function AddNotes({ notes, getNotes }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .post(
-        process.env.REACT_APP_API_URL + '/notes',
-        {
-          content1: event.target.content1.value,
-          content2: event.target.content2.value,
-          content3: event.target.content3.value,
-        }
-      )
-      .then(() => {
-        setIsSuccess(true);
-        setErrorMessage("");
-        getNotes();
-        setContent1("");
-        setContent2("");
-        setContent3("");
-      })
-      .catch((error) => {
-        setErrorMessage(error.response.data);
-      });
+    const newNote = {
+      content1,
+      content2,
+      content3,
+    };
+
+    const existingNotes = JSON.parse(localStorage.getItem('notes')) || [];
+    const updatedNotes = [...existingNotes, newNote];
+    localStorage.setItem('notes', JSON.stringify(updatedNotes));
+
+    setIsSuccess(true);
+    setErrorMessage("");
+    setContent1("");
+    setContent2("");
+    setContent3("");
   };
 
   const handleContentChange1 = (event) => {

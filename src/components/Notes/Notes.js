@@ -1,38 +1,45 @@
 import "./Notes.scss";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-function Notes({ notes, getNotes }) {
+function Notes() {
+  const [notes, setNotes] = useState([]);
+
   useEffect(() => {
-    getNotes();
+    const storedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+    const recentNotes = storedNotes.slice(-1);
+    setNotes(recentNotes);
   }, []);
 
   return (
     <div className="notes">
       <ul className="notes__list">
-        {notes ? (
-          <div className="notes__container" key={notes.id}>
-            <div className="notes__item-container">
-              <p className="notes__item">
-                {notes.content1}
-              </p>
+        {notes.length > 0 ? (
+          notes.map((note, index) => (
+            <div className="notes__container" key={index}>
+              <div className="notes__item-container">
+                <p className="notes__item">
+                  {note.content1}
+                </p>
+              </div>
+              <div className="notes__item-container">
+                <p className="notes__item">
+                  {note.content2}
+                </p>
+              </div>
+              <div className="notes__item-container">
+                <p className="notes__item">
+                  {note.content3}
+                </p>
+              </div>
             </div>
-            <div className="notes__item-container">
-              <p className="notes__item">
-                {notes.content2}
-              </p>
-            </div>
-            <div className="notes__item-container">
-              <p className="notes__item">
-                {notes.content3}
-              </p>
-            </div>
-          </div>
+          ))
         ) : (
-          "Loading notes..."
+          <div>Loading notes...</div>
         )}
       </ul>
     </div>
   );
+
 }
 
 export default Notes

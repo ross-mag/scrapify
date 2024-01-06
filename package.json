@@ -15,6 +15,7 @@
     "sass": "^1.63.4",
     "spotify-uri": "^3.0.4",
     "url": "^0.11.1",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
