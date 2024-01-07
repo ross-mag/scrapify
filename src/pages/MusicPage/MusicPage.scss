@@ -9,4 +9,13 @@
   min-height: 100vh;
   min-width: 100vh;
   padding: 1.4rem 0 4rem 0;
+
+  &__header {
+    font-size: 1.2rem;
+    margin: 2rem 0 0 0;
+    padding: 1rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 2rem;
+  }
 }

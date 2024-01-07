@@ -18,7 +18,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 3.2rem 4rem 2.8rem 4rem;
+    padding-top: 1rem;
+    margin: 0rem 4rem 2rem 4rem;
   }
 
   &__submit {
@@ -42,7 +43,7 @@
   align-items: flex-end;
   flex-direction: column;
   width: 60%;
-  margin: 0 2rem;
+  margin: 0 2rem 0 0;
   padding: 0 2rem 0 2rem;
 
   &__song-details-container {
@@ -79,8 +80,8 @@
 .songs {
   display: flex;
   justify-content: center;
-  margin: 1.2rem 4rem;
-  padding: 0 0 6rem 0;
+  // margin: 1.2rem 4rem;
+  padding: 1.2rem 4rem 6rem 4rem;
 }
 
 .song-details {
@@ -150,7 +151,7 @@
   display: flex;
   flex-direction: column;
   width: 40%;
-  margin: 0 4rem 0 0;
+  margin: 0 2rem 0 0;
   padding: 0 2rem 0 0;
 
   &__header {
@@ -196,18 +197,19 @@
   }
 
   &__image {
-    width: 16rem;
-    height: 16rem;
+    width: 18.4rem;
+    height: 18rem;
   }
 
   &__image-container {
-    background-image: url('../../assets/images/cd-case.jpg');
+    background-image: url('../../assets/images/cd-case-2.jpg');
+    background-color: beige;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    padding: 0 0 0.4rem 2.2rem;
-    height: 17.4rem;
-    width: 18.8rem;
+    padding: 0 0 0rem 1.5rem;
+    height: 18rem;
+    width: 21rem;
     display: flex;
     justify-content: center;
     align-items: center;

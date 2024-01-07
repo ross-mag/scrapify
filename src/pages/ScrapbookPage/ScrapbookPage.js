@@ -5,7 +5,7 @@ import Songs from "../../components/Songs/Songs";
 import { SelectedSongsContext } from "../../SelectedSongsContext";
 
 function ScrapbookPage() {
-  const { selectedSongs, setSelectedSongs } = useContext(SelectedSongsContext);
+  const { selectedSongs } = useContext(SelectedSongsContext);
 
   return (
     <div className="scrapbook-page">
