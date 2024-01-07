@@ -1,0 +1,51 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.about-page {
+  background-image: url('../../assets/images/blank-paper.jpg');
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vh;
+  padding: 0;
+}
+
+.about {
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0 0 0;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    padding: 2.4rem 0 0 0;
+    font-size: 1.2rem;
+  }
+
+  &__body-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 16rem;
+    padding: 0;
+  }
+}
+
+.signature {
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgb(136, 73, 151);
+    padding: 0 0 0 0.4rem;
+  }
+}

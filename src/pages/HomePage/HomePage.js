@@ -29,9 +29,7 @@ function HomePage() {
             Journal
           </button>
         </Link>
-        {/* <button className="spotify-login__button" onClick={handleSpotifyLogin}>
-          Log in with Spotify
-        </button> */}
+        {/* <a href="http://localhost:1020/login">Login with Spotify</a> */}
       </div>
     </div>
   );

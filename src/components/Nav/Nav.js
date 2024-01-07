@@ -12,6 +12,11 @@ function Nav() {
             </NavLink>
           </li>
           <li className="list-item">
+            <NavLink to={"/about"} className="list-item__link" activeclassname="active">
+              About
+            </NavLink>
+          </li>
+          <li className="list-item">
             <NavLink to={"/music"} className="list-item__link" activeclassname="active">
               Music
             </NavLink>
