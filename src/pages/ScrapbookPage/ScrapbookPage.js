@@ -10,7 +10,7 @@ function ScrapbookPage() {
   return (
     <div className="scrapbook-page">
       <Songs selectedSongs={selectedSongs} />
-      <Notes/>
+      <Notes />
     </div>
   );
 }
